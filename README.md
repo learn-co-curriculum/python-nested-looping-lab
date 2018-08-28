@@ -1,32 +1,165 @@
-# Object Orientation
 
-## Overview
+# Nested Looping Lab
 
-We'll introduce the concept of Object Oriented Programming (OOP)
+## Introduction
+In this lab, we will practice using nested loops to iterate over nested data structures and create new collections. We'll be using data for a basketball team to practice our nested loops.
 
-## Object-Oriented Programming (OOP)
+## Objectives
+* Understand how a nested loops work
+* Identify when to use nested loops
 
-*An object-oriented approach to application development makes programs more intuitive to design, faster to develop, more amenable to modification, and easier to understand.*  
-—[*Object-Oriented Programming with Objective-C*][apple_oop_guide_intro], Apple Inc.
+## Instructions
 
-[apple_oop_guide_intro]: https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/OOP_ObjC/Introduction/Introduction.html#//apple_ref/doc/uid/TP40005149-CH1-SW2
 
-It's natural to wonder, "how can a string of ones and zeroes be referred to as an 'object'?" The use of the word "object" is an abstraction of thought. An "object" in code has no more physical form than does a word in any human language. Sure, words have physical representations: speaking a word causes air to vibrate in a sound wave, ink on a page can be shaped into symbols that represent the word, a meaning can be pointed at or mimed out; but none of these are the word itself. Human language is a system of abstraction: it communicates the *idea* of a thing, but not the thing itself.
-
-![](https://upload.wikimedia.org/wikipedia/en/b/b9/MagrittePipe.jpg)  
-Translation: "This is not a pipe." - [*The Treachery of Images*](https://en.wikipedia.org/wiki/The_Treachery_of_Images), [René Magritte](https://en.wikipedia.org/wiki/Ren%C3%A9_Magritte), 1927  
-
-This image of a pipe is no more a pipe than the word "pipe" is a pipe; in the same way, a code object named `pipe` is not a pipe, but only another form of representing a pipe.
-
->As humans, we’re constantly faced with myriad facts and impressions that we must make sense of. To do so, we must abstract underlying structure away from surface details and discover the fundamental relations at work. Abstractions reveal causes and effects, expose patterns and frameworks, and separate what’s important from what’s not. Object orientation provides an abstraction of the data on which you operate; moreover, it provides a concrete grouping between the data and the operations you can perform with the data—in effect giving the data behavior.  
->—[*Object-Oriented Programming with Objective-C*](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/OOP_ObjC/Articles/ooOOP.html#//apple_ref/doc/uid/TP40005149-CH8-SW3), Apple Inc.
-
-A code object representing a water pipe (instead of a smoking pipe) might contain values for `length`, `diameter`, `material`, and `manufacturer`. The bundling of these individual pieces of information together begins to form a larger whole.
-
-Object-Oriented Programming, however, does more than just bundle up individual pieces of data that represent a "thing" — it also bundles customized functions that can be performed *on* that data. These are called **methods**: behaviors that an object performs upon its internal data and even upon other code objects.
-
-An object in code is a thing with all the data and all the logic required to complete a task. Objects are models and metaphors for the problems we solve in code.
-
-Object-oriented programming was born from the trend of making digital lives reflect our real lives. In the 1970's, [Adele Goldberg](https://en.wikipedia.org/wiki/Adele_Goldberg_%28computer_scientist%29) and [Alan Kay](https://en.wikipedia.org/wiki/Alan_Kay) developed an object-oriented language at Xerox PARC called SmallTalk, which was used in the first personal computer.
-
-Python comes with a few types of Objects to get us started, things like `int` for Integer, `str` for String, `list` for List, etc. We call these base types of Objects "Primitives." But what if we wanted to create a new type in our programming universe, a new kind of object for our code? That's what the `class` keyword and object orientation allows us to do.
+```python
+data = {
+    "home_team": {
+      "country": "France",
+      "num_passes": 484,
+      "passes_completed": 423,
+      "fouls_committed": 16,
+      "players": [
+        {
+          "name": "Hugo LLORIS",
+          "captain": True,
+          "shirt_number": 1,
+          "position": "Goalie"
+        },
+        {
+          "name": "Benjamin PAVARD",
+          "captain": False,
+          "shirt_number": 2,
+          "position": "Defender"
+        },
+        {
+          "name": "Raphael VARANE",
+          "captain": False,
+          "shirt_number": 4,
+          "position": "Defender"
+        },
+        {
+          "name": "Samuel UMTITI",
+          "captain": False,
+          "shirt_number": 5,
+          "position": "Defender"
+        },
+        {
+          "name": "Paul POGBA",
+          "captain": False,
+          "shirt_number": 6,
+          "position": "Midfield"
+        },
+        {
+          "name": "Antoine GRIEZMANN",
+          "captain": False,
+          "shirt_number": 7,
+          "position": "Forward"
+        },
+        {
+          "name": "Kylian MBAPPE",
+          "captain": False,
+          "shirt_number": 10,
+          "position": "Forward"
+        },
+        {
+          "name": "Ousmane DEMBELE",
+          "captain": False,
+          "shirt_number": 11,
+          "position": "Forward"
+        },
+        {
+          "name": "Corentin TOLISSO",
+          "captain": False,
+          "shirt_number": 12,
+          "position": "Midfield"
+        },
+        {
+          "name": "Ngolo KANTE",
+          "captain": False,
+          "shirt_number": 13,
+          "position": "Midfield"
+        },
+        {
+          "name": "Lucas HERNANDEZ",
+          "captain": False,
+          "shirt_number": 21,
+          "position": "Defender"
+        }
+      ],
+    },
+    "away_team": {
+      "country": "Australia",
+      "num_passes": 390,
+      "passes_completed": 332,
+      "fouls_committed": 19,
+      "players": [
+        {
+          "name": "Mathew RYAN",
+          "captain": False,
+          "shirt_number": 1,
+          "position": "Goalie"
+        },
+        {
+          "name": "Mark MILLIGAN",
+          "captain": False,
+          "shirt_number": 5,
+          "position": "Defender"
+        },
+        {
+          "name": "Mathew LECKIE",
+          "captain": False,
+          "shirt_number": 7,
+          "position": "Forward"
+        },
+        {
+          "name": "Robbie KRUSE",
+          "captain": False,
+          "shirt_number": 10,
+          "position": "Forward"
+        },
+        {
+          "name": "Andrew NABBOUT",
+          "captain": False,
+          "shirt_number": 11,
+          "position": "Forward"
+        },
+        {
+          "name": "Aaron MOOY",
+          "captain": False,
+          "shirt_number": 13,
+          "position": "Midfield"
+        },
+        {
+          "name": "Mile JEDINAK",
+          "captain": True,
+          "shirt_number": 15,
+          "position": "Midfield"
+        },
+        {
+          "name": "Aziz BEHICH",
+          "captain": False,
+          "shirt_number": 16,
+          "position": "Defender"
+        },
+        {
+          "name": "Joshua RISDON",
+          "captain": False,
+          "shirt_number": 19,
+          "position": "Defender"
+        },
+        {
+          "name": "Trent SAINSBURY",
+          "captain": False,
+          "shirt_number": 20,
+          "position": "Defender"
+        },
+        {
+          "name": "Tom ROGIC",
+          "captain": False,
+          "shirt_number": 23,
+          "position": "Midfield"
+        }
+      ]
+    }
+  }
+```
