@@ -183,6 +183,13 @@ countries
 ```
 
 
+
+
+    ['France', 'Australia']
+
+
+
+
 ```python
 # iterate over the soccer_match list to create a new list with the colors for each team
 # this should be only one list containing strings for each of the country's colors
@@ -195,6 +202,13 @@ colors
 ```
 
 
+
+
+    ['blue', 'white', 'red', 'green', 'gold']
+
+
+
+
 ```python
 # iterate over the soccer_match list to create a new list with the players from each team
 # this should be only one list containing the dictionaries for each of the country's players
@@ -205,6 +219,13 @@ for team in soccer_match:
         players.append(player)
 players
 ```
+
+
+
+
+    22
+
+
 
 
 ```python
@@ -220,6 +241,20 @@ captains
 ```
 
 
+
+
+    [{'name': 'Hugo LLORIS',
+      'captain': True,
+      'shirt_number': 1,
+      'position': 'Goalie'},
+     {'name': 'Mile JEDINAK',
+      'captain': True,
+      'shirt_number': 15,
+      'position': 'Midfield'}]
+
+
+
+
 ```python
 # iterate over the soccer_match list to create a new list with the players from ONLY the home team
 # this should be only one list containing the dictionaries for each of the home team's players
@@ -233,18 +268,87 @@ home_team_players
 ```
 
 
+
+
+    [{'name': 'Hugo LLORIS',
+      'captain': True,
+      'shirt_number': 1,
+      'position': 'Goalie'},
+     {'name': 'Benjamin PAVARD',
+      'captain': False,
+      'shirt_number': 2,
+      'position': 'Defender'},
+     {'name': 'Raphael VARANE',
+      'captain': False,
+      'shirt_number': 4,
+      'position': 'Defender'},
+     {'name': 'Samuel UMTITI',
+      'captain': False,
+      'shirt_number': 5,
+      'position': 'Defender'},
+     {'name': 'Paul POGBA',
+      'captain': False,
+      'shirt_number': 6,
+      'position': 'Midfield'},
+     {'name': 'Antoine GRIEZMANN',
+      'captain': False,
+      'shirt_number': 7,
+      'position': 'Forward'},
+     {'name': 'Kylian MBAPPE',
+      'captain': False,
+      'shirt_number': 10,
+      'position': 'Forward'},
+     {'name': 'Ousmane DEMBELE',
+      'captain': False,
+      'shirt_number': 11,
+      'position': 'Forward'},
+     {'name': 'Corentin TOLISSO',
+      'captain': False,
+      'shirt_number': 12,
+      'position': 'Midfield'},
+     {'name': 'Ngolo KANTE',
+      'captain': False,
+      'shirt_number': 13,
+      'position': 'Midfield'},
+     {'name': 'Lucas HERNANDEZ',
+      'captain': False,
+      'shirt_number': 21,
+      'position': 'Defender'}]
+
+
+
+
 ```python
-# iterate over the soccer_match list to create a new list with the players from ONLY the away team with the position of forward
+# iterate over the soccer_match list to create a new list 
+# with the players from ONLY the away team with the position of forward
 # this should be only one list containing the dictionaries for each of the selected players
 forwards = []
 # code goes here
 for team in soccer_match:
     if team['away_team']:
         for player in team['players']:
-            if player['position'] == 'Forward'
+            if player['position'] == 'Forward':
                 forwards.append(player)
 forwards
 ```
+
+
+
+
+    [{'name': 'Mathew LECKIE',
+      'captain': False,
+      'shirt_number': 7,
+      'position': 'Forward'},
+     {'name': 'Robbie KRUSE',
+      'captain': False,
+      'shirt_number': 10,
+      'position': 'Forward'},
+     {'name': 'Andrew NABBOUT',
+      'captain': False,
+      'shirt_number': 11,
+      'position': 'Forward'}]
+
+
 
 
 ```python
@@ -260,6 +364,16 @@ player_with_highest_num
 ```
 
 
+
+
+    {'name': 'Tom ROGIC',
+     'captain': False,
+     'shirt_number': 23,
+     'position': 'Midfield'}
+
+
+
+
 ```python
 # as we can see, the players all have their last names in all caps, as if they are being yelled
 # we want a list of all the names of the players in this match
@@ -271,6 +385,34 @@ for team in soccer_match:
         player_names.append(player['name'].title())
 player_names
 ```
+
+
+
+
+    ['Hugo Lloris',
+     'Benjamin Pavard',
+     'Raphael Varane',
+     'Samuel Umtiti',
+     'Paul Pogba',
+     'Antoine Griezmann',
+     'Kylian Mbappe',
+     'Ousmane Dembele',
+     'Corentin Tolisso',
+     'Ngolo Kante',
+     'Lucas Hernandez',
+     'Mathew Ryan',
+     'Mark Milligan',
+     'Mathew Leckie',
+     'Robbie Kruse',
+     'Andrew Nabbout',
+     'Aaron Mooy',
+     'Mile Jedinak',
+     'Aziz Behich',
+     'Joshua Risdon',
+     'Trent Sainsbury',
+     'Tom Rogic']
+
+
 
 ## Summary
 
